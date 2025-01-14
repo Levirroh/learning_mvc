@@ -1,0 +1,20 @@
+home.html:
+
+<article>
+    <header>
+        <h2><a href="#">titulo da postagem</a></h2>
+    </header>
+    <p>conteudo postagem</p>
+</article>
+<article>
+    <header>
+        <h2><a href="#">titulo da postagem</a></h2>
+    </header>
+    <p>conteudo postagem</p>
+</article>
+<article>
+    <header>
+        <h2><a href="#">titulo da postagem</a></h2>
+    </header>
+    <p>conteudo postagem</p>
+</article>
