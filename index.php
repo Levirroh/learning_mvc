@@ -1,9 +1,13 @@
 <?php
 // Carregar estrutura.html que desenvolvemos anteriormente e exibí-la
+require_once 'App/Model/Postagem.php';
 
 require_once 'App/Core/Core.php';
+
 require_once 'App/Controller/ErroController.php';
 require_once 'App/Controller/HomeController.php';
+
+require_once 'lib/Database/Connection.php';
 
 
 $template = file_get_contents('App/Template/estrutura.html'); // pega um conteúdo de um arquivo

@@ -2,8 +2,15 @@
 
 Class HomeController{
     public function index(){
-        echo 'Home';
+        try {
+            // echo 'Home';
+            $collectPostagems = Postagem::selecionaTodos();
+            var_dump($collectPostagems);
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
     }
+
 }
 
 ?>

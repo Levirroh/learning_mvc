@@ -14,3 +14,6 @@ CREATE TABLE comentario(
     fk_postagem INT NOT NULL,
     FOREIGN KEY (fk_postagem) REFERENCES postagem(id_postagem)
 ); 
+
+INSERT INTO postagem (titulo_postagem, conteudo_postagem) VALUES ('primeira postagem', 'batata é bom');
+INSERT INTO postagem (titulo_postagem, conteudo_postagem) VALUES ('segundo postagem', 'batata é ruim');
