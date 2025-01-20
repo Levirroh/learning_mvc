@@ -7,7 +7,7 @@ class Postagem{
         $sql = $con->prepare($sql);
         $sql->execute();
 
-        while ($row = $sql->fetchObject('Postagem')){
+        while ($row = $sql->fetchObject('postagem')){
             $resultado[] = $row;
         }
 
