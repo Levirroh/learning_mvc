@@ -10,6 +10,9 @@ require_once 'App/Controller/HomeController.php';
 require_once 'lib/Database/Connection.php';
 
 
+require_once 'vendor/autoload.php'; //  pega todos os arquivos da pasta vendor automaticamente
+
+
 $template = file_get_contents('App/Template/estrutura.html'); // pega um conteúdo de um arquivo
 
 ob_start(); // inicia ob
