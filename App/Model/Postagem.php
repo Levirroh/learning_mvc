@@ -16,23 +16,30 @@ class Postagem{
         } 
         return $resultado;   
     }
-    public static function selecionaPorId($idPost)
-		{
-			$con = Connection::getConn();
+    public static function selecionaPorId($idPost){
+        $con = Connection::getConn();
 
-			$sql = "SELECT * FROM postagem WHERE id_postagem = :id";
-			$sql = $con->prepare($sql);
-			$sql->bindValue(':id', $idPost, PDO::PARAM_INT);
-			$sql->execute();
+        $sql = "SELECT * FROM postagem WHERE id_postagem = :id";
+        $sql = $con->prepare($sql);
+        $sql->bindValue(':id', $idPost, PDO::PARAM_INT);
+        $sql->execute();
 
-			$resultado = $sql->fetchObject('Postagem');
+        $resultado = $sql->fetchObject('Postagem');
 
-			if (!$resultado) {
-				throw new Exception("Não foi encontrado nenhum registro no banco");	
-			}
+        if (!$resultado) {
+            throw new Exception("Não foi encontrado nenhum registro no banco");	
+        } else {
+            $resultado->comentarios = Comentario::selecionarComentarios($idPost);
 
-			return $resultado;
-		}
+            if (!$resultado->comentarios){
+                $resultado->comentario = 'Ainda não existe nenhuma mensagem neste comentário!';
+            }
+        }
+
+        return $resultado;
+    }
+    
+
 }
 
 ?>

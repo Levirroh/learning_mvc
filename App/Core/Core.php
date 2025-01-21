@@ -22,10 +22,8 @@ class Core
 
         if (isset($urlGet['id']) && $urlGet['id'] != null) {
             $id = $urlGet['id'];
-            echo $id;
         } else {
             $id = null;
-            echo $id;
         }
 
         call_user_func_array(array(new $controller, $acao), array($id));

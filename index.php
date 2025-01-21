@@ -1,6 +1,7 @@
 <?php
 // Carregar estrutura.html que desenvolvemos anteriormente e exibí-la
 require_once 'App/Model/Postagem.php';
+require_once 'App/Model/Comentario.php';
 
 require_once 'App/Core/Core.php';
 
