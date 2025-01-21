@@ -5,5 +5,23 @@
             </header>
 
             <p>{{conteudo}}</p>
+
+            <br>
+            <hr>
+            <br>
+            {% if (comentarios == false) %}
+                <p>Nenhum comentário encontrado para esta postagem</p>
+            {% else %}
+                {% for comentario in comentarios %}
+                    <article>
+                        <header>
+                            <h3>{{comentario.autor_comentario}}</h3>
+                        </header>
+                        
+                        <p>{{comentario.mensagem_comentario}}</p>
+                    </article>
+                    <br>
+                {% endfor %}
+            {% endif %}
         </article>
 </section>

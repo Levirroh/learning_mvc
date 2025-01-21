@@ -6,6 +6,7 @@ require_once 'App/Model/Comentario.php';
 require_once 'App/Core/Core.php';
 
 require_once 'App/Controller/ErroController.php';
+require_once 'App/Controller/SobreController.php';
 require_once 'App/Controller/HomeController.php';
 require_once 'App/Controller/PostController.php';
 

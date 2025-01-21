@@ -30,10 +30,6 @@ class Postagem{
             throw new Exception("Não foi encontrado nenhum registro no banco");	
         } else {
             $resultado->comentarios = Comentario::selecionarComentarios($idPost);
-
-            if (!$resultado->comentarios){
-                $resultado->comentario = 'Ainda não existe nenhuma mensagem neste comentário!';
-            }
         }
 
         return $resultado;

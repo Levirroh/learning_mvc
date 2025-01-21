@@ -13,6 +13,8 @@ Class PostController{
             $parametros['titulo'] = $postagem->titulo_postagem;
             $parametros['conteudo'] = $postagem->conteudo_postagem;
 
+            $parametros['comentarios'] = $postagem->comentarios;
+
 
             $conteudo = $template->render($parametros);
             echo $conteudo;
