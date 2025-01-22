@@ -34,6 +34,25 @@ class Postagem{
 
         return $resultado;
     }
+    public static function insert($dadosPost) 
+    {
+        if (($dadosPost['titulo'] == "") OR empty($dadosPost['conteudo'])){
+            throw new Exception("Preencha todos os campos.");
+            return false;
+        } 
+        $con = Connection::getConn();
+        $sql = "INSERT INTO postagem(titulo_postagem, conteudo_postagem) VALUES (:tit, :cont)";
+        $sql = $con->prepare($sql);
+        $sql->bindValue(':tit', $dadosPost['titulo']);
+        $sql->bindValue(':cont', $dadosPost['conteudo']);
+        $res = $sql->execute();
+        if  ($res == 0){
+            throw new Exception("Falha ao inserir postagem.");
+            return false;
+        }
+        return true;
+
+    }
     
 
 }
