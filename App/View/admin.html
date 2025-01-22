@@ -18,8 +18,8 @@
             <th>{{postagem.id_postagem}}</th>
             <th>{{postagem.autor_postagem}}</th>
             <th>{{postagem.titulo_postagem}}</th>            
-            <th>Alterar</th>
-            <th>Deletar</th>
+            <th><a href="http://localhost/learning_mvc/?pagina=admin&metodo=change&id={{postagem.id_postagem}}">Alterar</a></th>
+            <th><a href="http://localhost/learning_mvc/?pagina=admin&metodo=delete&id={{postagem.id_postagem}}">Deletar</a></th>
         </tr>
         {% endfor %}
 </table>
