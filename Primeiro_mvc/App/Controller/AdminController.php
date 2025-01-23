@@ -33,10 +33,10 @@ Class AdminController{
             Postagem::insert($_POST);
         
             echo '<script>alert("Publicação inserida com sucesso!");</script>';
-            echo '<script>location.href="http://localhost/learning_mvc/?pagina=admin&metodo=index"</script>';
+            echo '<script>location.href="http://localhost/learning_mvc/Primeiro_mvc/?pagina=admin&metodo=index"</script>';
         } catch(Exception $e){
             echo '<script>alert("Erro ao inserir publicação");</script>';
-            echo '<script>location.href="http://localhost/learning_mvc/?pagina=admin&metodo=create"</script>';
+            echo '<script>location.href="http://localhost/learning_mvc/Primeiro_mvc/?pagina=admin&metodo=create"</script>';
         }
     }
     public function change($paramId){
@@ -59,10 +59,10 @@ Class AdminController{
         try{
             Postagem::update($_POST);
             echo '<script>alert("Publicação alterada com sucesso!");</script>';
-            echo '<script>location.href="http://localhost/learning_mvc/?pagina=admin&metodo=index"</script>';
+            echo '<script>location.href="http://localhost/learning_mvc/Primeiro_mvc/?pagina=admin&metodo=index"</script>';
         } catch(Exception $e){
             echo '<script>alert("Erro ao alterar a publicação");</script>';
-            echo '<script>location.href="http://localhost/learning_mvc/?pagina=admin&metodo=change&id='.$_POST['id'].'"</script>';
+            echo '<script>location.href="http://localhost/learning_mvc/Primeiro_mvc/?pagina=admin&metodo=change&id='.$_POST['id'].'"</script>';
         }
 
     }
@@ -72,10 +72,10 @@ Class AdminController{
         try{
             Postagem::delete($paramId);
             echo '<script>alert("Publicação deletada com sucesso!");</script>';
-            echo '<script>location.href="http://localhost/learning_mvc/?pagina=admin&metodo=index"</script>';
+            echo '<script>location.href="http://localhost/learning_mvc/Primeiro_mvc/?pagina=admin&metodo=index"</script>';
         } catch(Exception $e){
             echo '<script>alert("Erro ao deletar a publicação");</script>';
-            echo '<script>location.href="http://localhost/learning_mvc/?pagina=admin&metodo=index"</script>';
+            echo '<script>location.href="http://localhost/learning_mvc/Primeiro_mvc/?pagina=admin&metodo=index"</script>';
         }
        
     }

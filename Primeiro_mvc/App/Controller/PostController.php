@@ -28,11 +28,11 @@ Class PostController{
         try{
             Comentario::inserir($_POST);
             echo '<script>alert("Comentário inserido com sucesso!");</script>';
-            echo '<script>location.href="http://localhost/learning_mvc/?pagina=post&id='.$_POST['id'].'"</script>';
+            echo '<script>location.href="http://localhost/learning_mvc/Primeiro_mvc/?pagina=post&id='.$_POST['id'].'"</script>';
         }
         catch(Exception $e){
             echo '<script>alert("Publicação inserida com sucesso!");</script>';
-            echo '<script>location.href="http://localhost/learning_mvc/?pagina=post&id='.$_POST['id'].'"</script>';
+            echo '<script>location.href="http://localhost/learning_mvc/Primeiro_mvc/?pagina=post&id='.$_POST['id'].'"</script>';
 
         }
     }
