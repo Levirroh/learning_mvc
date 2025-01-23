@@ -20,7 +20,24 @@ class Comentario{
             $resultado[] = $row;
         }
         return $resultado;
+    }
 
+    public static function inserir($reqPost)
+    {
+        $con = Connection::getConn();
+
+        $sql = "INSERT INTO comentario (autor_comentario,mensagem_comentario, fk_postagem) VALUES (:aut, :msg, :fk)";
+        $sql = $con->prepare($sql);
+        $sql->bindValue(':aut', $reqPost['nome']);
+        $sql->bindValue(':msg', $reqPost['msg']);
+        $sql->bindValue(':fk', $reqPost['id'], PDO::PARAM_INT);
+        $sql->execute();
+
+       if ($sql->rowCount()){
+        return true;
+       }
+        throw new Exception("Falha ao criar comentário.");
+        return false;
     }
 
 
