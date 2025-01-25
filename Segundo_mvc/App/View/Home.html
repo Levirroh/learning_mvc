@@ -6,7 +6,7 @@
             {% for tarefa in tarefas %}
                 {% if (tarefa.status_tarefa == "A fazer") %}
                     <div class="tarefa">
-                        <p>Descrição {{tarefa.descricao_tarefa}}</p>
+                        <p>Descrição: {{tarefa.descricao_tarefa}}</p>
                         <p>Setor: {{tarefa.setor_tarefa}}</p>
                         <p>Prioridade: {{tarefa.prioridade_tarefa}}</p>
                         <p>Vinculado: {{tarefa.fk_usuario}}</p>
@@ -27,7 +27,7 @@
             {% for tarefa in tarefas %}
                 {% if (tarefa.status_tarefa == "Fazendo") %}
                     <div class="tarefa">
-                        <p>Descrição {{tarefa.descricao_tarefa}}</p>
+                        <p>Descrição: {{tarefa.descricao_tarefa}}</p>
                         <p>Setor: {{tarefa.setor_tarefa}}</p>
                         <p>Prioridade: {{tarefa.prioridade_tarefa}}</p>
                         <p>Vinculado: {{tarefa.fk_usuario}}</p>
@@ -48,7 +48,7 @@
             {% for tarefa in tarefas %}
                 {% if (tarefa.status_tarefa == "Pronto") %}
                     <div class="tarefa">
-                        <p>Descrição {{tarefa.descricao_tarefa}}</p>
+                        <p>Descrição: {{tarefa.descricao_tarefa}}</p>
                         <p>Setor: {{tarefa.setor_tarefa}}</p>
                         <p>Prioridade: {{tarefa.prioridade_tarefa}}</p>
                         <p>Vinculado: {{tarefa.fk_usuario}}</p>

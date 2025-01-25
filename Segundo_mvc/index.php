@@ -6,6 +6,7 @@ require_once "App/Core/Core.php";
 //Controllers
 require_once "App/Controller/ErroController.php";
 require_once "App/Controller/HomeController.php";
+require_once "App/Controller/AdminController.php";
 
 
 //Model
