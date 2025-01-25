@@ -3,59 +3,65 @@
     <section id="tarefas_menu">
         <div>
             <h2>A FAZER</h2>
-            {% for tarefa in tarefasAfazer %}
-                <div class="tarefa">
-                    <p>Descrição {{tarefa.descricao_tarefa}}</p>
-                    <p>Setor: {{tarefa.setor_tarefa}}</p>
-                    <p>Prioridade: {{tarefa.prioridade_tarefa}}</p>
-                    <p>Vinculado: {{tarefa.fk_usuario}}</p>
-                    <button type="submit" name="deletar" value='{{id}}'>Deletar</button>   
-                    <button type="submit" name="alterar" value='{{id}}'>Alterar</button>
-                    <form action="" method="POST">
-                        <input type="radio" value="A Fazer" name="A fazer">A fazer
-                        <input type="radio" value="Fazendo" name="Fazendo"> Fazendo
-                        <input type="radio" value="Pronto" name="Pronto"> Pronto <br>
-                        <input type="submit" value="Alterar Status" name="alterarStatus">
-                    </form>
-                </div>
+            {% for tarefa in tarefas %}
+                {% if (tarefa.status_tarefa == "A fazer") %}
+                    <div class="tarefa">
+                        <p>Descrição {{tarefa.descricao_tarefa}}</p>
+                        <p>Setor: {{tarefa.setor_tarefa}}</p>
+                        <p>Prioridade: {{tarefa.prioridade_tarefa}}</p>
+                        <p>Vinculado: {{tarefa.fk_usuario}}</p>
+                        <button type="submit" name="deletar" value='{{id}}'>Deletar</button>   
+                        <button type="submit" name="alterar" value='{{id}}'>Alterar</button>
+                        <form action="" method="POST">
+                            <input type="radio" value="A Fazer" name="A fazer">A fazer
+                            <input type="radio" value="Fazendo" name="Fazendo"> Fazendo
+                            <input type="radio" value="Pronto" name="Pronto"> Pronto <br>
+                            <input type="submit" value="Alterar Status" name="alterarStatus">
+                        </form>
+                    </div>
+                {% endif %}
             {% endfor %}
         </div>
         <div>
             <h2>FAZENDO</h2>
-            {% for tarefa in tarefa_Fazendo %}
-            <div class="tarefa">
-                <p>Descrição {{descricao.tarefa}}</p>
-                <p>Setor: {{setor.tarefa}}</p>
-                <p>Prioridade: {{prioridade.tarefa}}</p>
-                <p>Vinculado: {{usuario}}</p>
-                <input type="submit" name="deletar" value='{{id}}'>
-                <input type="submit" name="alterar" value='{{id}}'>
-                <form action="" method="POST">
-                    <input type="radio" value="A Fazer" name="A fazer">
-                    <input type="radio" value="Fazendo" name="Fazendo">
-                    <input type="radio" value="Pronto" name="Pronto">
-                    <input type="submit" value="Alterar Status" name="alterarStatus">
-                </form>
-            </div>
+            {% for tarefa in tarefas %}
+                {% if (tarefa.status_tarefa == "Fazendo") %}
+                    <div class="tarefa">
+                        <p>Descrição {{tarefa.descricao_tarefa}}</p>
+                        <p>Setor: {{tarefa.setor_tarefa}}</p>
+                        <p>Prioridade: {{tarefa.prioridade_tarefa}}</p>
+                        <p>Vinculado: {{tarefa.fk_usuario}}</p>
+                        <button type="submit" name="deletar" value='{{id}}'>Deletar</button>   
+                        <button type="submit" name="alterar" value='{{id}}'>Alterar</button>
+                        <form action="" method="POST">
+                            <input type="radio" value="A Fazer" name="A fazer">A fazer
+                            <input type="radio" value="Fazendo" name="Fazendo"> Fazendo
+                            <input type="radio" value="Pronto" name="Pronto"> Pronto <br>
+                            <input type="submit" value="Alterar Status" name="alterarStatus">
+                        </form>
+                    </div>
+                {% endif %}
             {% endfor %}
         </div>
         <div>
             <h2>PRONTO</h2>
-            {% for tarefa in tarefa_Pronto %}
-            <div class="tarefa">
-                <p>Descrição {{descricao.tarefa}}</p>
-                <p>Setor: {{setor.tarefa}}</p>
-                <p>Prioridade: {{prioridade.tarefa}}</p>
-                <p>Vinculado: {{usuario}}</p>
-                <input type="submit" name="deletar" value='{{id}}'>
-                <input type="submit" name="alterar" value='{{id}}'>
-                <form action="" method="POST">
-                    <input type="radio" value="A Fazer" name="A fazer">
-                    <input type="radio" value="Fazendo" name="Fazendo">
-                    <input type="radio" value="Pronto" name="Pronto">
-                    <input type="submit" value="Alterar Status" name="alterarStatus">
-                </form>
-            </div>
+            {% for tarefa in tarefas %}
+                {% if (tarefa.status_tarefa == "Pronto") %}
+                    <div class="tarefa">
+                        <p>Descrição {{tarefa.descricao_tarefa}}</p>
+                        <p>Setor: {{tarefa.setor_tarefa}}</p>
+                        <p>Prioridade: {{tarefa.prioridade_tarefa}}</p>
+                        <p>Vinculado: {{tarefa.fk_usuario}}</p>
+                        <button type="submit" name="deletar" value='{{id}}'>Deletar</button>   
+                        <button type="submit" name="alterar" value='{{id}}'>Alterar</button>
+                        <form action="" method="POST">
+                            <input type="radio" value="A Fazer" name="A fazer">A fazer
+                            <input type="radio" value="Fazendo" name="Fazendo"> Fazendo
+                            <input type="radio" value="Pronto" name="Pronto"> Pronto <br>
+                            <input type="submit" value="Alterar Status" name="alterarStatus">
+                        </form>
+                    </div>
+                {% endif %}
             {% endfor %}
         </div>
     </section>
