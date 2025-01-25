@@ -1,6 +1,22 @@
 <?php
-
+//Core
 require_once "App/Core/Core.php";
+
+
+//Controllers
+require_once "App/Controller/ErroController.php";
+require_once "App/Controller/HomeController.php";
+
+
+//Model
+require_once "App/Model/Tarefa.php";
+
+
+//Database
+require_once "lib/database/connection.php";
+
+//Vendor
+require_once 'vendor/autoload.php'; //  pega todos os arquivos da pasta vendor automaticamente
 
 $template = file_get_contents('App/Template/estrutura.html');
 
