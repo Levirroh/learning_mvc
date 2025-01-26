@@ -30,5 +30,16 @@ class AdminController{
             echo '<script>location.href="http://localhost/learning_mvc/Segundo_mvc/?pagina=admin&metodo=index"</script>';
         }
     }
-
+    public function delete($idTarefa){
+        $con = Connection::getConn();
+        
+        try{
+            Tarefa::delete($idTarefa);
+            echo '<script>alert("Publicação deletada com sucesso!");</script>';
+            echo '<script>location.href="http://localhost/learning_mvc/Segundo_mvc/"</script>';
+        } catch(Exception $e){
+            echo '<script>alert("Erro ao deletar publicação");</script>';
+            echo '<script>location.href="http://localhost/learning_mvc/Segundo_mvc/"</script>';
+        }
+    }
 }

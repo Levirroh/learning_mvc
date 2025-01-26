@@ -36,5 +36,19 @@ class tarefa
         }
         return true;
     }
+    public static function delete($id){
+        $con = Connection::getConn();
+
+        $sql = "DELETE FROM tarefas WHERE id_tarefa = :id";
+        $sql = $con->prepare($sql);
+        $sql->bindValue(':id', $id);
+        $res = $sql->execute();
+
+        if  ($res == 0){
+            throw new Exception("Falha ao inserir postagem.");
+            return false;
+        }
+        return true;
+    }
 
 }
