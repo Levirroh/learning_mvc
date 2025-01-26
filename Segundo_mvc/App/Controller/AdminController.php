@@ -18,10 +18,10 @@ class AdminController{
                 Tarefa::insert($_POST);
             
                 echo '<script>alert("Publicação inserida com sucesso!");</script>';
-                echo '<script>location.href="http://localhost/learning_mvc/Primeiro_mvc/?pagina=admin&metodo=index"</script>';
+                echo '<script>location.href="http://localhost/learning_mvc/Segundo_mvc/"</script>';
             } catch(Exception $e){
                 echo '<script>alert("Erro ao inserir publicação");</script>';
-                echo '<script>location.href="http://localhost/learning_mvc/Primeiro_mvc/?pagina=admin&metodo=create"</script>';
+                echo '<script>location.href="http://localhost/learning_mvc/Segundo_mvc/?pagina=admin&metodo=index"</script>';
             }
         }
 

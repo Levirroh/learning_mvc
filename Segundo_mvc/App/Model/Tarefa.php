@@ -24,16 +24,20 @@ class tarefa
         $sql = "SELECT id_usuario FROM usuarios WHERE nome_usuario = ':usu'";
         $sql = $con->prepare($sql);
         $sql->bindValue(':usu', $dadosPost['usuario']);
-        $sql->execute();
-        $res = $sql->execute();
+        $fk_usuario = $sql->execute();
+        
+        if (!$fk_usuario){
+            throw new Exception("Nenhum usuário com este nome.");
+            return false;
+        }
 
-        $sql = "INSERT INTO tarefas(fk_usuario, descricao_tarefa, setor_tarefa, status_tarefa, prioridade_tarefa) VALUES (:fk, :descr, :setor, :sta, :prio)";
+        $sql = "INSERT INTO tarefas (fk_usuario, descricao_tarefa, setor_tarefa, status_tarefa, prioridade_tarefa) VALUES (:fk, :descr, :setor, :sta, :prio)";
         $sql = $con->prepare($sql);
+        $sql->bindValue(':fk', $fk_usuario);
         $sql->bindValue(':descr', $dadosPost['descricao']);
         $sql->bindValue(':setor', $dadosPost['setor']);
-        $sql->bindValue(':fk', $dadosPost['usuario']);
         $sql->bindValue(':prio', $dadosPost['prioridade']);
-        $sql->bindValue(':tit', 'A Fazer');
+        $sql->bindValue(':sta', 'A Fazer');
         $sql->execute();
         $res = $sql->execute();
 
