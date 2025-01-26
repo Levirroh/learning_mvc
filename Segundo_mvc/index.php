@@ -7,10 +7,12 @@ require_once "App/Core/Core.php";
 require_once "App/Controller/ErroController.php";
 require_once "App/Controller/HomeController.php";
 require_once "App/Controller/AdminController.php";
+require_once "App/Controller/UsuarioController.php";
 
 
 //Model
 require_once "App/Model/Tarefa.php";
+require_once "App/Model/Usuario.php";
 
 
 //Database

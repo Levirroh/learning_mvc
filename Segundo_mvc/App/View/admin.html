@@ -7,7 +7,12 @@
         <input type="text" name="setor"><br>
         
         <label for="usuario">Digite o usuário</label>
-        <input type="text" name="usuario"><br>
+        
+        <select name="usuario">
+            {% for usuario in usuarios %}
+                <option value="{{usuario.id_usuario}}">{{usuario.nome_usuario}}</option>
+            {% endfor %}
+        </select><br>
         
         <label for="prioridade">Selecione a prioridade da tarefa</label>
         <select name="prioridade">
