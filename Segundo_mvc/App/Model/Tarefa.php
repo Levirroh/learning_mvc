@@ -18,6 +18,22 @@ class tarefa
     
         return $resultado;  
     }
+    public static function selecionaPorId($idPost){
+        $con = Connection::getConn();
+
+        $sql = "SELECT * FROM tarefas INNER JOIN usuarios ON tarefas.fk_usuario = usuarios.id_usuario WHERE id_tarefa = :id";
+        $sql = $con->prepare($sql);
+        $sql->bindValue(':id', $idPost, PDO::PARAM_INT);
+        $sql->execute();
+
+        $resultado = $sql->fetchObject('Tarefa');
+
+        if (!$resultado) {
+            throw new Exception("Não foi encontrado nenhum registro no banco");	
+        } 
+
+        return $resultado; 
+    }
     public static function insert($dadosPost){
         $con = Connection::getConn();
 
@@ -50,5 +66,35 @@ class tarefa
         }
         return true;
     }
+    public static function update($dadosPost){
+        $con = Connection::getConn();
 
+        $sql = "UPDATE tarefas SET descricao_tarefa = :descr, setor_tarefa = :setor, fk_usuario = :usu, prioridade_tarefa = :prio WHERE id_tarefa = :id";
+        $sql = $con->prepare($sql);
+        $sql->bindValue(':descr', $dadosPost['descricao']);
+        $sql->bindValue(':setor', $dadosPost['setor']);
+        $sql->bindValue(':usu', $dadosPost['usuario']);
+        $sql->bindValue(':prio', $dadosPost['prioridade']);
+        $sql->bindValue(':id', $dadosPost['id']);
+        $res = $sql->execute();
+        if  ($res == 0){
+            throw new Exception("Falha ao atualizar postagem.");
+            return false;
+        }
+        return true;
+    }
+    public static function updateStatus($dadosPost){
+        $con = Connection::getConn();
+
+        $sql = "UPDATE tarefas SET status_tarefa = :sta WHERE id_tarefa = :id";
+        $sql = $con->prepare(query: $sql);
+        $sql->bindValue(':sta', $dadosPost['status']);
+        $sql->bindValue(':id', $dadosPost['id']);
+        $res = $sql->execute();
+        if  ($res == 0){
+            throw new Exception("Falha ao atualizar postagem.");
+            return false;
+        }
+        return true;
+    }
 }

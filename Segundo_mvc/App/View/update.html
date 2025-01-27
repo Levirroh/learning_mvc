@@ -1,0 +1,28 @@
+<section>
+    <form action="http://localhost/learning_mvc/Segundo_mvc/?pagina=admin&metodo=update&id={{id_tarefa}}" method="POST">
+        <label for="descricao">Digite a descrição da tarefa:</label><br>
+        <textarea name="descricao" rows="5" cols="45">{{descricao_tarefa}}</textarea><br>
+
+        <label for="setor">Digite o setor da tarefa</label>
+        <input type="text" name="setor" value="{{setor_tarefa}}"><br>
+        
+        <input type="hidden" name="id" value="{{id_tarefa}}">
+
+        <label for="usuario">Digite o usuário</label>
+        <select name="usuario">
+            <option value="{{id_usuario}}" selected>{{usuario_tarefa}}</option>
+            {% for usuario in usuarios %}
+                <option value="{{id_usuario}}">{{usuario_tarefa}}</option>
+            {% endfor %}
+        </select><br>
+        
+        <label for="prioridade">Selecione a prioridade da tarefa</label>
+        <select name="prioridade">
+            <option value="{{prioridade_tarefa}}" selected>{{prioridade_tarefa}}</option>
+            <option value="Alta">Alta</option>
+            <option value="Média">Média</option>
+            <option value="Baixa">Baixa</option>
+        </select><br>
+        <input type="submit" name="update" value="Alterar Tarefa">
+    </form>
+</section>

@@ -11,11 +11,15 @@
                         <p>Prioridade: {{tarefa.prioridade_tarefa}}</p>
                         <p>Vinculado: {{tarefa.nome_usuario}}</p>
                         <a href="http://localhost/learning_mvc/Segundo_mvc/?pagina=admin&metodo=delete&id={{tarefa.id_tarefa}}">Deletar</a>  
-                        <button type="submit" name="alterar" value='{{tarefa.id_tarefa}}'>Alterar</button>
-                        <form action="" method="POST">
-                            <input type="radio" value="A Fazer" name="A fazer">A fazer
-                            <input type="radio" value="Fazendo" name="Fazendo"> Fazendo
-                            <input type="radio" value="Pronto" name="Pronto"> Pronto <br>
+                        <a href="http://localhost/learning_mvc/Segundo_mvc/?pagina=admin&metodo=change&id={{tarefa.id_tarefa}}">Alterar</a>
+                        <br>
+                        <form action="http://localhost/learning_mvc/Segundo_mvc/?pagina=admin&metodo=changeStatus&id={{tarefa.id_tarefa}}" method="POST">
+                            <select name="status">
+                                <option value="A Fazer" selected>A fazer</option>
+                                <option value="Fazendo">Fazendo</option>
+                                <option value="Pronto">Pronto</option> <br>
+                            </select>
+                            <input type="hidden" value="{{tarefa.id_tarefa}}" name="id">
                             <input type="submit" value="Alterar Status" name="alterarStatus">
                         </form>
                     </div>
@@ -32,11 +36,15 @@
                         <p>Prioridade: {{tarefa.prioridade_tarefa}}</p>
                         <p>Vinculado: {{tarefa.nome_usuario}}</p>
                         <a href="http://localhost/learning_mvc/Segundo_mvc/?pagina=admin&metodo=delete&id={{tarefa.id_tarefa}}">Deletar</a>  
-                        <button type="submit" name="alterar" value='{{tarefa.id_tarefa}}'>Alterar</button>
-                        <form action="" method="POST">
-                            <input type="radio" value="A Fazer" name="A fazer">A fazer
-                            <input type="radio" value="Fazendo" name="Fazendo"> Fazendo
-                            <input type="radio" value="Pronto" name="Pronto"> Pronto <br>
+                        <a href="http://localhost/learning_mvc/Segundo_mvc/?pagina=admin&metodo=change&id={{tarefa.id_tarefa}}">Alterar</a>
+                        <br>
+                        <form action="http://localhost/learning_mvc/Segundo_mvc/?pagina=admin&metodo=changeStatus&id={{tarefa.id_tarefa}}" method="POST">
+                            <select name="status">
+                                <option value="A Fazer">A fazer</option>
+                                <option value="Fazendo" selected>Fazendo</option>
+                                <option value="Pronto">Pronto</option> <br>
+                            </select>
+                            <input type="hidden" value="{{tarefa.id_tarefa}}" name="id">
                             <input type="submit" value="Alterar Status" name="alterarStatus">
                         </form>
                     </div>
@@ -53,11 +61,15 @@
                         <p>Prioridade: {{tarefa.prioridade_tarefa}}</p>
                         <p>Vinculado: {{tarefa.nome_usuario}}</p>
                         <a href="http://localhost/learning_mvc/Segundo_mvc/?pagina=admin&metodo=delete&id={{tarefa.id_tarefa}}">Deletar</a>     
-                        <button type="submit" name="alterar" value='{{tarefa.id_tarefa}}'>Alterar</button>
-                        <form action="" method="POST">
-                            <input type="radio" value="A Fazer" name="A fazer">A fazer
-                            <input type="radio" value="Fazendo" name="Fazendo"> Fazendo
-                            <input type="radio" value="Pronto" name="Pronto"> Pronto <br>
+                        <a href="http://localhost/learning_mvc/Segundo_mvc/?pagina=admin&metodo=change&id={{tarefa.id_tarefa}}">Alterar</a>
+                        <br>
+                        <form action="http://localhost/learning_mvc/Segundo_mvc/?pagina=admin&metodo=changeStatus&id={{tarefa.id_tarefa}}" method="POST">
+                            <select name="status">
+                                <option value="A Fazer">A fazer</option>
+                                <option value="Fazendo">Fazendo</option>
+                                <option value="Pronto" selected>Pronto</option> <br>
+                            </select>
+                            <input type="hidden" value="{{tarefa.id_tarefa}}" name="id">
                             <input type="submit" value="Alterar Status" name="alterarStatus">
                         </form>
                     </div>
